@@ -1,0 +1,19 @@
+header h1
+{
+	color:blue;
+	text-align: center;
+	background-color: silver;
+
+}
+form
+{
+
+	text-align: center;
+
+}
+label
+{
+	margin-bottom: 20px;
+	display:block;
+
+}
