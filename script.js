@@ -5,14 +5,14 @@
 				{username:"abc",password:"xyz"}
 			];*/
 
-/*var hrauth=[
+var hrauth=[
 			{username:"vimal",password:"negi"},
 			{username:"shubham",password:"sharma"},
 			{username:"manish",password:"srivastav"},
 			{username:"abc",password:"xyz"}
 			];
-localStorage.setItem("hrauth", JSON.stringify(hrauth));*/
-
+var empauth=[];
+localStorage.setItem("hrauth", JSON.stringify(hrauth));
 function hello()
 {
 	alert("hello");
@@ -35,12 +35,9 @@ function validate()
 			p.appendChild(text);
 			document.body.appendChild(p);
 			return false;
-		    
-		    //document.write("Please fill all blocks");
 		}
 	}
 	
-     // [{name:"vimal negi",pno:"8801986312"},{},{}]
      var un=document.getElementById("username").value;
      var pwd=document.getElementById("password").value;
     for(i=0;i<hrauth.length;i++)
@@ -64,9 +61,21 @@ function validate()
 		p.appendChild(text);
 		document.body.appendChild(p);
 		return false;
-    }
-
-
-         
+    }         
 }
 
+function registernew()
+{
+	var rname=document.getElementById("rname").value;
+	var rusername=document.getElementById("rusername").value;
+	var rdoj=document.getElementById("rdoj").value;
+	empauth[empauth.length]={name:rname,username:rusername,doj:rdoj};
+	//alert(empauth[empauth.length-1].name);
+	/*var len=document.getElementById("listcurrent").childNodes.length;
+	var table=document.getElementById("listcurrent");
+	var tr=document.createElement("tr");
+	var td1=document.createElement("td");
+	var td2=document.createElement("td");*/
+	
+
+}
