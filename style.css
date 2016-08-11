@@ -17,3 +17,34 @@ label
 	display:block;
 
 }
+
+#login-form
+{
+
+}
+
+#welcome-hr
+{
+	display:none;
+}
+
+#listEmp
+{
+	display:none;
+}
+
+#remark
+{
+
+	display: none;
+}
+
+#registernew
+{
+	display: none;
+}
+
+#sidebar, #userprofile
+{
+	display: none;
+}

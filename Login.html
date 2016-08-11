@@ -11,59 +11,99 @@
     	    <h1>Employee Management System</h1>
     	</header>
 
-//LOGIN PAGE
+<!--LOGIN PAGE -->
 
     	<div id="login-form">
     	<form onsubmit="return validate();" id="login">
     		<label>
     			username
-    			<input type="text" id="username"/>
+    			<input type="text" id="username" class="login, lfusername"onblur="checkempty('lfusername')"/><small class="lfusername" ;"></small>
     		</label>
     		<label>
     			password
-    			<input type="password" id="password"/>
+    			<input type="password" id="password" class="login, lfpassword" onblur="checkempty('lfpassword');"/><small class="lfpassword"></small>
     		</label>
     		<input type="submit" value="submit" id="submit" />
+    		<small id="error"></small>
     	</form>
 	    </div>
 
-//WELCOME HEADING FOR HR
-	    <div >
-	    	<form id="useradd">
-	    		<h2>Welcome <label id="hr"></label></h2>
+<!--WELCOME HEADING FOR HR-->
+	    <div id="welcome-hr" >
+	    	
+	    		<h2>Welcome <p id="hr"></p></h2>
+	    		<button onclick="signout();">Signout</button>
 	    			
-	    	</form>
+	    	
 	    </div>
 
-//OPTIONS FOR HR
+<!--OPTIONS FOR HR-->
 
 	    <div id="sidebar">
 	    	<input type="button" value="Register new" onclick="register();"/>
 	    	<input type="button" value="current Employees" onclick="listEmp();"/>
+	    	<input type="button" value="remarks" onclick="remark()"/>	
 	    </div>
 	    
-//LIST OF CURRENT EMPLOYEES
+<!--LIST OF CURRENT EMPLOYEES-->
 
 
 	    <div id="listEmp">
-	    		<table id="listcurrent" border=1>
+	    		<table id="list" border=1>
 	    			<tr>
 	    				<th>Name</th>
 	    				<th>username</th>
-	    				<th>remarks</th>
+	    				<th>date of joining</th>
+	    				<th>remark</th>
+	    				
+
 	    			</tr>
 	    		</table>
+	    		<table id="listcurrent"></table>
 	    </div>
 
-//FORM FOR ADDING NEW EMPLOYEE
+<!--FORM FOR ADDING NEW EMPLOYEE -->
 
 	    <div id="registernew">
 	    	<h2>Enter the details of new Employee</h2>
-	    	<label>Name <input type="text" id="rname"/></label>
-	    	<label>username<input type="text" id="rusername"/></label>
-	    	<label>date of joining<input type="text" id="rdoj"/></label>
-	    	<input type="button"  value="register"onclick="registernew()"/>
+	    	<label>Name <input type="text" id="rname" class="register, rnname" onblur="checkempty('rnname')"/><small class="rnname" ;"></small></label>
+	    	
+	    	<label>username<input type="text" id="rusername" class="register, rnusername" onblur="checkempty('rnusername');"/><small class="rnusername" ></small></label>
+	    	
+	    	<label>date of joining<input type="text" class="register, rndoj" id="rdoj" onblur="checkempty('rndoj');"/><small class="rndoj" ></small></label>
+	    	
+	    	<label>Remark<input type="text" id="rremark" class="register, rnremark" onblur="checkempty('rnremark');"/><small class="rnremark" ></small></label>
+
+	    	<label>Password<input type="password" id="rpassword" class="register, rnpassword" onblur="checkempty('rnpassword');"/><small class="rnpassword"></small>
+	    	
+	    	<input type="button"  value="register" onclick="registernew()"/><small id="rnerror"></small>
 	    </div>
+
+
+<!--USER PROFILE -->
+
+	    <div id="userprofile">
+	    	<table id="profile" border="1">
+	    		<tr>
+	    			<th>Name</th>
+	    			<th>username</th>
+	    			<th>date of joining</th>
+	    			<th>remark</th>				
+	    		</tr>
+
+	    	</table>
+	    	
+	    </div >
+
+<!--REMARK-->
+		<div id="remark">
+			<h2>want to view REMARKS for employees</h2>
+			<label>Name of employee 
+				<input type="text" id="rkname" class="rkname" onblur="checkempty('rkname');" /><small class="rkname"></small></label>
+			<label>Remark<textarea id="rkremark" class="rkremark" onblur="checkempty('rkremark');"></textarea><small class="rkremark"></small></label>
+			<input type="button" value="submit" onclick="submitRemark();"/>
+			
+		</div>
 
     </body>
 
